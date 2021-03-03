@@ -32,9 +32,10 @@ public class Houses {
 		rob.setPenColor(color);
 		rob.setAngle(0);
 		rob.move(height);
-		rob.turn(90);
-		rob.move(25);
-		rob.turn(90);
+		if(height<250) {
+			drawPointyRoof();
+		}else
+			drawFlatRoof();
 		rob.move(height);
 		rob.turn(-90);
 		rob.setPenColor(Color.GREEN);
@@ -48,5 +49,17 @@ public class Houses {
 			drawHouse(120,color);
 		}else
 			drawHouse(250,color);
+	}
+	void drawPointyRoof() {
+		rob.turn(45);
+		rob.move(25);
+		rob.turn(90);
+		rob.move(25);
+		rob.turn(45);
+	}
+	void drawFlatRoof() {
+		rob.turn(90);
+		rob.move(25);
+		rob.turn(90);
 	}
 }
