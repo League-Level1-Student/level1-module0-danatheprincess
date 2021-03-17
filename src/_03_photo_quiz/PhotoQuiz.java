@@ -51,15 +51,20 @@ quizWindow.remove(picture);
 		// 10. find another image and create it (might take more than one line
 		// of code)
 String different="https://cdn.pixabay.com/photo/2015/02/24/15/41/wolf-647528__340.jpg";
-
+Component illustration;
+illustration=createImage(different);
 		// 11. add the second image to the quiz window
-
+quizWindow.add(illustration);
 		// 12. pack the quiz window
-
+quizWindow.pack();
 		// 13. ask another question
-
+String ques=JOptionPane.showInputDialog("who or what is holwing at the moon?");
 		// 14+ check answer, say if correct or incorrect, etc.
-
+if(ques.equalsIgnoreCase("a wolf")) {
+	JOptionPane.showMessageDialog(null, "CORRECT");
+}else {
+	JOptionPane.showMessageDialog(null, "INCORRECT, better LUCK this time");
+}
 	}
 
 	private Component createImage(String imageUrl) throws MalformedURLException {
